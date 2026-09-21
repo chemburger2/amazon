@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Complete</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        .box {
+            text-align: center;
+            background: white;
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 17px;
+            color: #555;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 14px 28px;
+            font-size: 17px;
+            border: none;
+            border-radius: 7px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>You have been verified</h1>
+        <p>Your verification was successful.</p>
+
+        <button id="continueButton">
+            Press to continue
+        </button>
+    </div>
+
+    <audio id="sound" src="sound.mp3" preload="auto"></audio>
+
+    <script>
+        const button = document.getElementById("continueButton");
+        const sound = document.getElementById("sound");
+
+        button.addEventListener("click", function () {
+            sound.currentTime = 0;
+            sound.volume = 1.0;
+            sound.play();
+        });
+    </script>
+
+</body>
+</html>
